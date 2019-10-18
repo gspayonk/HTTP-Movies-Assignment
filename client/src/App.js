@@ -4,6 +4,9 @@ import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
 
+//importing update form
+import EditForm from './Movies/EditForm';
+
 const App = () => {
   const [savedList, setSavedList] = useState([]);
 
@@ -21,6 +24,9 @@ const App = () => {
           return <Movie {...props} addToSavedList={addToSavedList} />;
         }}
       />
+      {/* adding new routes for editing the movies and adding a new movie */}
+      <Route path="/update-movie/:id" component={EditForm}/>
+      <Route path="/addmovie" component={EditForm}/>
     </>
   );
 };
